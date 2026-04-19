@@ -37,6 +37,18 @@ class LinkedList {
         }
     }
 
+    reverse() {
+        let prev = null;
+        let current = this.head;
+
+        while(current !== null){
+            let next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+    }
+
     delete(data) {
         if (!this.head) return;
         if (this.head.data === data) {
@@ -61,6 +73,7 @@ linkedList.insertAtEnd(4);
 linkedList.insertAtEnd(5);
 linkedList.insertAtBeginning(0);
 linkedList.insertAtEnd(6);
-linkedList.delete(7);
 
+
+linkedList.reverse();
 linkedList.traverse();
